@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hubungi LinguaClass</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <header>
+    <div class="container">
+        <div class="logo">
+            <img src="logo.jpeg" alt="LinguaClass Logo">
+            <span class="logo-name">LinguaClass</span>
+        </div>
+
+        <nav>
+            <ul>
+                <li><a href="index.html" class="active">Beranda</a></li>
+                <li><a href="about.html">Tentang</a></li>
+                <li><a href="features.html">Fitur</a></li>
+                <li><a href="contact.html">Kontak</a></li>
+            </ul>
+        </nav>
+    </div>
+</header>
+
+    <section class="page-header">
+        <div class="container">
+            <h1>Mulai Hari Ini</h1>
+            <p>Mulai perjalanan bahasa Anda bersama LinguaClass</p>
+        </div>
+    </section>
+
+    <section class="contact-info">
+        <div class="container">
+            <div class="contact-grid">
+                <div class="contact-details">
+                    <h2>Kami Siap Membantu</h2>
+                    <p>Memiliki pertanyaan tentang platform kami atau butuh bantuan? Hubungi tim kami atau daftar di bawah untuk memulai perjalanan belajar bahasa Anda.</p>
+                    
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i class="fas fa-envelope"></i>
+                        </div>
+                        <div class="contact-text">
+                            <h3>Email Kami</h3>
+                            <p>linguaclass@gmail.com</p>
+                        </div>
+                    </div>
+                    
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i class="fas fa-phone-alt"></i>
+                        </div>
+                        <div class="contact-text">
+                            <h3>Hubungi Kami</h3>
+                            <p>+62 1367 7784 10</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="contact-form-container">
+                    <h2>Daftar untuk Percobaan Gratis</h2>
+                    <form id="registrationForm" class="contact-form">
+                        <div class="form-group">
+                            <label for="name">Nama Lengkap</label>
+                            <input type="text" id="name" name="name" placeholder="Nama Anda" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="email">Alamat Email</label>
+                            <input type="email" id="email" name="email" placeholder="Email Anda" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="language">Bahasa yang Diminati</label>
+                            <select id="language" name="language" required>
+                                <option value="italian">English</option>
+                                <option value="japanese">Japanese</option>
+                                <option value="korean">Korea</option>
+                                <option value="arabic">Chinese</option>
+                            </select>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label>Tingkat Kemampuan</label>
+                            <div class="radio-group">
+                                <input type="radio" id="beginner" name="level" value="beginner" checked>
+                                <label for="beginner">Pemula</label>
+                                  
+                                <input type="radio" id="intermediate" name="level" value="intermediate">
+                                <label for="intermediate">Menengah</label>
+                                  
+                                <input type="radio" id="advanced" name="level" value="advanced">
+                                <label for="advanced">Lanjutan</label>
+                            </div>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="goals">Tujuan Pembelajaran</label>
+                            <textarea id="goals" name="goals" placeholder="Ceritakan tujuan belajar bahasa Anda" rows="4"></textarea>
+                        </div>
+                        
+                        <div class="form-group checkbox-group">
+                            <input type="checkbox" id="terms" name="terms" required>
+                            <label for="terms">Saya setuju dengan Ketentuan Layanan dan Kebijakan Privasi</label>
+                        </div>
+                        
+                        <button type="submit" class="cta-button" onclick="submitForm(event)">Mulai Percakapan Percobaan Gratis</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <img src="logo.jpeg" alt="LinguaClass Logo" class="footer-logo">
+                    <p>Bahasa membuka dunia—kami bantu kamu memulainya..</p>
+                    <div class="social-icons">
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+                <div class="footer-col">
+                    <h4>Bahasa</h4>
+                    <ul>
+                        <li><a href="#">English</a></li>
+                        <li><a href="#">Japanese</a></li>
+                        <li><a href="#">Korea</a></li>
+                        <li><a href="#">Chinese</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Lainnya</h4>
+                    <ul>
+                        <li><a href="contact.html">Contact Us</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 LinguaClass. Hak Cipta Dilindungi.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        function submitForm(event) {
+            event.preventDefault();
+            
+            // Validasi form sederhana
+            const name = document.getElementById('name').value;
+            const email = document.getElementById('email').value;
+            const language = document.getElementById('language').value;
+            
+            if (name && email && language) {
+                // Jika form valid, tampilkan alert sukses
+                alert("Terima kasih telah mendaftar! Percakapan percobaan gratis Anda telah diaktifkan. Cek email Anda untuk detail login.");
+                document.getElementById('registrationForm').reset();
+            } else {
+                // Jika form tidak lengkap
+                alert("Harap lengkapi semua kolom yang diperlukan.");
+            }
+        }
+    </script>
+</body>
+</html>
